@@ -80,8 +80,8 @@
 <body>
 
 <nav class="navbar">
-  <a href="#" class="logo">FitConnect</a>
-  <a href="login.jsp" class="login-btn">Login</a>
+  <a href="" class="logo">FitConnect</a>
+  <a href="auth/login" class="login-btn">Login</a>
 </nav>
 
 <section class="hero">
@@ -89,6 +89,5 @@
   <p>Your fitness journey starts here. Connect, train, and achieve your goals with the best community and tools.</p>
   <a href="auth/registration" class="get-started-btn">Get Started</a>
 </section>
-
 </body>
 </html>
