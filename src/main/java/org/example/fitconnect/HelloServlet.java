@@ -19,7 +19,10 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
+        out.println("<a href=\"auth/login\">Login</a>");
         out.println("</body></html>");
+
+        out.close();
     }
 
     public void destroy() {
