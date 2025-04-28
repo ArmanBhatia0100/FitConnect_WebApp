@@ -44,9 +44,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="clients">Clients</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
             </ul>
         </div>

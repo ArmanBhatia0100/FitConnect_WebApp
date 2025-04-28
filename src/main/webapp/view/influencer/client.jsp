@@ -4,170 +4,197 @@
 <head>
     <meta charset="UTF-8">
     <title>Client Fitness Journey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        :root {
+            /* Color Palette */
+            --primary: #0d6efd;
+            --secondary: #6c757d;
+            --success: #198754;
+            --danger: #dc3545;
+            --background: #f5f7fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.05);
+
+            /* Typography */
+            --font-family: 'Poppins', sans-serif;
+            --font-size-base: 1rem;
+            --font-weight-regular: 400;
+            --font-weight-bold: 600;
+
+            /* Spacing */
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+
+            /* Border Radius */
+            --border-radius-sm: 6px;
+            --border-radius-lg: 12px;
         }
 
-        /* Navbar Styles */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-regular);
+            background-color: var(--background);
+            color: #212529;
+            line-height: 1.5;
         }
 
-        .navbar .logo {
-            font-size: 24px;
-            font-weight: bold;
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: var(--font-weight-bold);
+            color: #212529;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Navbar */
+        .fc-navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px var(--shadow);
+        }
+
+        .fc-navbar .logo {
+            font-weight: var(--font-weight-bold);
+            color: var(--primary);
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
-        .nav-links {
+        .fc-navbar .nav-links {
             display: flex;
-            gap: 20px;
+            gap: var(--spacing-md);
         }
 
-        .nav-links a {
-            color: white;
+        .fc-navbar .nav-links a {
+            color: var(--secondary);
+            font-weight: var(--font-weight-regular);
+            padding: var(--spacing-sm) var(--spacing-md);
             text-decoration: none;
-            font-size: 16px;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
         }
 
-        .nav-links a:hover {
-            background-color: #34495e;
+        .fc-navbar .nav-links a:hover {
+            color: var(--primary);
         }
 
-        /* Main Content Styles */
+        /* Container */
         .container {
             max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
+            margin: var(--spacing-lg) auto;
+            padding: 0 var(--spacing-md);
         }
 
         /* Client Status */
-        .client-status {
-            background: #f5f6fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .fc-card.client-status {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 8px var(--shadow);
+            background-color: var(--white);
+            margin-bottom: var(--spacing-lg);
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
         }
 
         .client-status-column {
             flex: 1;
         }
 
-        .client-status p {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-
         .status-active {
-            color: #27ae60;
-            font-weight: 500;
+            color: var(--success);
+            font-weight: var(--font-weight-regular);
         }
 
         /* Diet and Workout Plans */
         .diet-plans, .workout-plans {
-            margin-bottom: 30px;
+            margin-bottom: var(--spacing-lg);
         }
 
-        .action-btn {
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 20px;
+        /* Buttons */
+        .fc-btn {
+            border-radius: var(--border-radius-sm);
+            font-weight: var(--font-weight-regular);
+            padding: var(--spacing-sm) var(--spacing-md);
+            transition: background-color 0.2s, color 0.2s;
         }
 
-        .action-btn:hover {
-            background-color: #2980b9;
+        .fc-btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
         }
 
-        .plan-table {
+        .fc-btn-primary:hover {
+            background-color: #0b5ed7;
+            border-color: #0a58ca;
+        }
+
+        .fc-btn-sm {
+            padding: calc(var(--spacing-sm) / 2) var(--spacing-sm);
+            font-size: 0.875rem;
+        }
+
+        /* Tables */
+        .fc-table {
             width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--spacing-md);
         }
 
-        .plan-table th, .plan-table td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        .fc-table th {
+            font-weight: var(--font-weight-bold);
+            color: #212529;
+            padding: var(--spacing-sm) var(--spacing-md);
         }
 
-        .plan-table th {
-            background-color: #f5f6fa;
-            color: #2c3e50;
-            font-weight: 600;
+        .fc-table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            vertical-align: middle;
         }
 
-        .plan-table tr:hover {
+        .fc-table.table-hover tbody tr:hover {
             background-color: #f8f9fa;
         }
 
-        .table-action-btn {
-            padding: 8px 15px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .table-action-btn:hover {
-            background-color: #2980b9;
-        }
-
-        /* Workout Plans */
+        /* Exercise List */
         .exercise-list {
-            margin-left: 20px;
+            margin-left: var(--spacing-md);
             list-style: disc;
         }
 
         /* Notification Bar */
         .notification-bar {
-            background: #3498db;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: var(--primary);
+            color: var(--white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 4px 8px var(--shadow);
         }
     </style>
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar">
+<nav class="fc-navbar navbar">
     <div class="logo" onclick="window.location.href='index.jsp'">Logo</div>
     <div class="nav-links">
-        <a href="dashboard.jsp">Dashboard</a>
-        <a href="clients.jsp">Clients</a>
-        <a href="profile.jsp">Profile</a>
+        <a href="dashboard">Dashboard</a>
+        <a href="clients">Clients</a>
+        <a href="profile">Profile</a>
         <a href="logout.jsp">Logout</a>
     </div>
 </nav>
@@ -177,7 +204,7 @@
     <h1>Client: John Doe</h1>
 
     <!-- Client Status -->
-    <div class="client-status">
+    <div class="client-status fc-card">
         <div class="client-status-column">
             <h2>Fitness Journey Status</h2>
             <p><strong>Status:</strong> <span class="status-active">Active</span></p>
@@ -198,11 +225,11 @@
     <!-- Diet Plans -->
     <div class="diet-plans">
         <h2>Diet Plans</h2>
-        <button class="action-btn" onclick="window.location.href='createDietPlan.jsp'">Create New Diet Plan</button>
+        <button class="fc-btn fc-btn-primary" onclick="window.location.href='createDietPlan.jsp'">Create New Diet Plan</button>
 
         <!-- Current Diet Plan -->
         <h3>Current Diet Plan</h3>
-        <table class="plan-table">
+        <table class="fc-table table table-hover">
             <thead>
             <tr>
                 <th>Plan Name</th>
@@ -219,7 +246,7 @@
                 <td>2023-06-16</td>
                 <td>Moderate carbs, proteins, and fats for sustainability</td>
                 <td>
-                    <button class="table-action-btn" onclick="window.location.href='dietPlan.jsp?id=2'">View Details</button>
+                    <button class="fc-btn fc-btn-primary fc-btn-sm" onclick="window.location.href='dietPlan.jsp?id=2'">View Details</button>
                 </td>
             </tr>
             </tbody>
@@ -227,7 +254,7 @@
 
         <!-- Previous Diet Plans -->
         <h3>Previous Diet Plans</h3>
-        <table class="plan-table">
+        <table class="fc-table table table-hover">
             <thead>
             <tr>
                 <th>Plan Name</th>
@@ -244,7 +271,7 @@
                 <td>2023-03-15</td>
                 <td>Low-carb, high-fat diet to promote fat loss</td>
                 <td>
-                    <button class="table-action-btn" onclick="window.location.href='dietPlan.jsp?id=1'">View Details</button>
+                    <button class="fc-btn fc-btn-primary fc-btn-sm" onclick="window.location.href='dietPlan.jsp?id=1'">View Details</button>
                 </td>
             </tr>
             </tbody>
@@ -254,11 +281,11 @@
     <!-- Workout Plans -->
     <div class="workout-plans">
         <h2>Workout Plans</h2>
-        <button class="action-btn" onclick="window.location.href='createWorkoutPlan.jsp'">Add New Workout</button>
+        <button class="fc-btn fc-btn-primary" onclick="window.location.href='createWorkoutPlan.jsp'">Add New Workout</button>
 
         <!-- Current Workout Plan -->
         <h3>Current Workout Plan</h3>
-        <table class="plan-table">
+        <table class="fc-table table table-hover">
             <thead>
             <tr>
                 <th>Workout Type</th>
@@ -277,7 +304,7 @@
                     </ul>
                 </td>
                 <td>
-                    <button class="table-action-btn" onclick="window.location.href='editWorkoutPlan.jsp?id=push'">Modify</button>
+                    <button class="fc-btn fc-btn-primary fc-btn-sm" onclick="window.location.href='editWorkoutPlan.jsp?id=push'">Modify</button>
                 </td>
             </tr>
             </tbody>
@@ -285,7 +312,7 @@
 
         <!-- Previous Workout Plans -->
         <h3>Previous Workout Plans</h3>
-        <table class="plan-table">
+        <table class="fc-table table table-hover">
             <thead>
             <tr>
                 <th>Workout Type</th>
@@ -304,7 +331,7 @@
                     </ul>
                 </td>
                 <td>
-                    <button class="table-action-btn" onclick="window.location.href='editWorkoutPlan.jsp?id=pull'">Modify</button>
+                    <button class="fc-btn fc-btn-primary fc-btn-sm" onclick="window.location.href='editWorkoutPlan.jsp?id=pull'">Modify</button>
                 </td>
             </tr>
             <tr>
@@ -317,7 +344,7 @@
                     </ul>
                 </td>
                 <td>
-                    <button class="table-action-btn" onclick="window.location.href='editWorkoutPlan.jsp?id=leg'">Modify</button>
+                    <button class="fc-btn fc-btn-primary fc-btn-sm" onclick="window.location.href='editWorkoutPlan.jsp?id=leg'">Modify</button>
                 </td>
             </tr>
             </tbody>
@@ -329,5 +356,6 @@
         <p>Reminder: John has a check-in scheduled for 2023-04-30. Please review progress and update goals.</p>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
