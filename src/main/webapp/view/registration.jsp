@@ -10,10 +10,26 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background: #f5f7fa;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #0d6efd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
         }
         .register-container {
             background: #fff;
@@ -22,6 +38,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
             width: 400px;
+            margin: 2rem auto;
         }
         .register-container h2 {
             color: #0d6efd;
@@ -66,6 +83,17 @@
     </style>
 </head>
 <body>
+
+<div class="navbar">
+    <div class="logo" style="font-weight: 700; font-size: 1.5rem; color: #fff;">
+        <a href="/FitConnect_war">FitConnect</a>
+    </div>
+    <div class="nav-links">
+        <a href="/FitConnect_war">Home</a>
+        <a href="login">Login</a>
+    </div>
+</div>
+
 <div class="register-container">
     <h2>Create Your Account</h2>
     <form action="RegisterServlet" method="post">

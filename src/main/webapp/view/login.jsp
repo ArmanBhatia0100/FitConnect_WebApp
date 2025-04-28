@@ -10,11 +10,36 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background: #f5f7fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
+        /* Navbar styles */
+        .navbar {
+            background-color: #0d6efd;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .navbar .nav-button {
+            background-color: #fff;
+            color: #0d6efd;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .navbar .nav-button:hover {
+            background-color: #e2e6ea;
+        }
+        /* Center container styles */
         .login-container {
             background: #fff;
             padding: 2rem 3rem;
@@ -22,6 +47,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
             width: 350px;
+            margin: 3rem auto;
         }
         .login-container h2 {
             color: #0d6efd;
@@ -66,6 +92,14 @@
     </style>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="/FirConnect_war" class="logo">FitConnect</a>
+    <a href="registration" class="nav-button">Register</a>
+</nav>
+
+<!-- Main Content -->
 <div class="login-container">
     <h2>Login to FitConnect</h2>
     <form action="auth/login" method="post">
@@ -75,5 +109,6 @@
     </form>
     <p>Don't have an account? <a href="registration">Register</a></p>
 </div>
+
 </body>
 </html>
