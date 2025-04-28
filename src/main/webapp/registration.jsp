@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - FitConnect</title>
+    <title>Register - FitConnect</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,19 +15,19 @@
             align-items: center;
             height: 100vh;
         }
-        .login-container {
+        .register-container {
             background: #fff;
             padding: 2rem 3rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
-            width: 350px;
+            width: 400px;
         }
-        .login-container h2 {
+        .register-container h2 {
             color: #0d6efd;
             margin-bottom: 1.5rem;
         }
-        .login-container input {
+        .register-container input {
             width: 100%;
             padding: 0.8rem;
             margin-bottom: 1rem;
@@ -35,7 +35,7 @@
             border-radius: 8px;
             font-size: 1rem;
         }
-        .login-container button {
+        .register-container button {
             background-color: #0d6efd;
             color: #fff;
             border: none;
@@ -48,33 +48,35 @@
             margin-top: 1rem;
             transition: background 0.3s;
         }
-        .login-container button:hover {
+        .register-container button:hover {
             background-color: #0b5ed7;
         }
-        .login-container p {
+        .register-container p {
             margin-top: 1rem;
             font-size: 0.9rem;
         }
-        .login-container a {
+        .register-container a {
             color: #0d6efd;
             text-decoration: none;
             font-weight: 600;
         }
-        .login-container a:hover {
+        .register-container a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<div class="login-container">
-    <h2>Login to FitConnect</h2>
-    <form action="auth/login" method="post">
-        <input type="text" name="email" placeholder="Email" required />
+<div class="register-container">
+    <h2>Create Your Account</h2>
+    <form action="RegisterServlet" method="post">
+        <input type="text" name="fullname" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
         <input type="password" name="password" placeholder="Password" required />
-        <button type="submit">Login</button>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
     </form>
-    <p>Don't have an account? <a href="register.jsp">Register</a></p>
+    <p>Already have an account? <a href="login.jsp">Login</a></p>
 </div>
 
 </body>
